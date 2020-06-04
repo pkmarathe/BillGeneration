@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="57671d8602eb485aa7094e2d443b0bde" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="BillGenerationModel.CategoryMaster" Width="1.5" PointX="1.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillGenerationModel.CurrencyMaster" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillGenerationModel.RegistrationTable" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillGenerationModel.TaxMaster" Width="1.5" PointX="6" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BillGenerationModel.FontMaster" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="BillGenerationModel.CategoryRecieptMaster" Width="1.5" PointX="7.75" PointY="10.375" />
+        <AssociationConnector Association="BillGenerationModel.FK_CategoryRecieptMaster_CategoryId" />
+        <AssociationConnector Association="BillGenerationModel.FK_CategoryRecieptMaster_FontId" />
+        <EntityTypeShape EntityType="BillGenerationModel.BillRecieptTable" Width="1.5" PointX="11" PointY="0.75" />
+        <AssociationConnector Association="BillGenerationModel.FK_BillRecieptTable_CategoryRecieptId" />
+        <AssociationConnector Association="BillGenerationModel.FK_BillRecieptTable_CurrencyId" />
+        <AssociationConnector Association="BillGenerationModel.FK_BillRecieptTable_FontId" />
+        <AssociationConnector Association="BillGenerationModel.FK_BillRecieptTable_UserId" />
+        <EntityTypeShape EntityType="BillGenerationModel.BillRecieptItemInfo" Width="1.5" PointX="13.25" PointY="18" />
+        <EntityTypeShape EntityType="BillGenerationModel.BillRecieptTaxInfo" Width="1.5" PointX="13.25" PointY="14.875" />
+        <AssociationConnector Association="BillGenerationModel.FK_BillRecieptItemInfo_BillRecieptId" />
+        <AssociationConnector Association="BillGenerationModel.FK_BillRecieptTaxInfo_BillRecieptId" />
+        <AssociationConnector Association="BillGenerationModel.FK_BillRecieptTaxInfo_TaxId" />
+        <EntityTypeShape EntityType="BillGenerationModel.SubscriptionPlan" Width="1.5" PointX="13.375" PointY="1" />
+        <EntityTypeShape EntityType="BillGenerationModel.SubscriptionPlanPayment" Width="1.5" PointX="15.625" PointY="2.125" />
+        <AssociationConnector Association="BillGenerationModel.FK_SubscriptionPlanPayment_UserId" />
+        <AssociationConnector Association="BillGenerationModel.FK_SubscriptionPlanPayment_SubscriptionPlanId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,14 @@
+1) Gas Receipt :-
+
+websitename,DocNo,Invoice/ReceiptNo,GSTNo,BillNo,AtndId,FPId,Pump,NozlNo,Fuel,Density,TinNo,TRXId,AccountNo,PompaSalans,NomarNota,JenisBBM,StationNo
+
+2) Grocery Receipt :-
+
+HelplineNo,LandlineNo,CINNo,STNo,OPNo,TENo,TRNO,TCNo,REFNo,Validation,PaymentService,ExpiryDate,PayAmount/Cash,Lane,Clerk,Cashier,MRCH,EPSSequence,NetworkId,TerminalId
+
+3) Parking Receipt :-
+
+SpaceNo,TicketNo,SNNo,Lot/Location,PayedAt,EntryDate,ExitDate,MachName,VehicleNo,VehicleType
+
+4) Pharmacy Receipt :-
+

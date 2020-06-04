@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://sendmail.quacito.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://sendmail.quacito.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://sendmail.quacito.com/">
+      <s:element name="Sending_Email">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailAddrFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailAddrTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailAddrBcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAttachement" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sending_EmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sending_EmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendingBulkEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="From" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="To" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BCC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AttObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendingBulkEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendingBulkEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Sending_EmailSoapIn">
+    <wsdl:part name="parameters" element="tns:Sending_Email" />
+  </wsdl:message>
+  <wsdl:message name="Sending_EmailSoapOut">
+    <wsdl:part name="parameters" element="tns:Sending_EmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendingBulkEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendingBulkEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendingBulkEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendingBulkEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sending_EmailHttpGetIn">
+    <wsdl:part name="strEmailAddrFrom" type="s:string" />
+    <wsdl:part name="strEmailAddrTo" type="s:string" />
+    <wsdl:part name="strEmailAddrBcc" type="s:string" />
+    <wsdl:part name="Subject" type="s:string" />
+    <wsdl:part name="Body" type="s:string" />
+    <wsdl:part name="strAttachement" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Sending_EmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendingBulkEmailHttpGetIn">
+    <wsdl:part name="From" type="s:string" />
+    <wsdl:part name="To" type="s:string" />
+    <wsdl:part name="BCC" type="s:string" />
+    <wsdl:part name="Subject" type="s:string" />
+    <wsdl:part name="Message" type="s:string" />
+    <wsdl:part name="AttObj" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendingBulkEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Sending_EmailHttpPostIn">
+    <wsdl:part name="strEmailAddrFrom" type="s:string" />
+    <wsdl:part name="strEmailAddrTo" type="s:string" />
+    <wsdl:part name="strEmailAddrBcc" type="s:string" />
+    <wsdl:part name="Subject" type="s:string" />
+    <wsdl:part name="Body" type="s:string" />
+    <wsdl:part name="strAttachement" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Sending_EmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendingBulkEmailHttpPostIn">
+    <wsdl:part name="From" type="s:string" />
+    <wsdl:part name="To" type="s:string" />
+    <wsdl:part name="BCC" type="s:string" />
+    <wsdl:part name="Subject" type="s:string" />
+    <wsdl:part name="Message" type="s:string" />
+    <wsdl:part name="AttObj" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendingBulkEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="SendmailSoap">
+    <wsdl:operation name="Sending_Email">
+      <wsdl:input message="tns:Sending_EmailSoapIn" />
+      <wsdl:output message="tns:Sending_EmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendingBulkEmail">
+      <wsdl:input message="tns:SendingBulkEmailSoapIn" />
+      <wsdl:output message="tns:SendingBulkEmailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SendmailHttpGet">
+    <wsdl:operation name="Sending_Email">
+      <wsdl:input message="tns:Sending_EmailHttpGetIn" />
+      <wsdl:output message="tns:Sending_EmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendingBulkEmail">
+      <wsdl:input message="tns:SendingBulkEmailHttpGetIn" />
+      <wsdl:output message="tns:SendingBulkEmailHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SendmailHttpPost">
+    <wsdl:operation name="Sending_Email">
+      <wsdl:input message="tns:Sending_EmailHttpPostIn" />
+      <wsdl:output message="tns:Sending_EmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendingBulkEmail">
+      <wsdl:input message="tns:SendingBulkEmailHttpPostIn" />
+      <wsdl:output message="tns:SendingBulkEmailHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SendmailSoap" type="tns:SendmailSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Sending_Email">
+      <soap:operation soapAction="http://sendmail.quacito.com/Sending_Email" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendingBulkEmail">
+      <soap:operation soapAction="http://sendmail.quacito.com/SendingBulkEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendmailSoap12" type="tns:SendmailSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Sending_Email">
+      <soap12:operation soapAction="http://sendmail.quacito.com/Sending_Email" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendingBulkEmail">
+      <soap12:operation soapAction="http://sendmail.quacito.com/SendingBulkEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendmailHttpGet" type="tns:SendmailHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Sending_Email">
+      <http:operation location="/Sending_Email" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendingBulkEmail">
+      <http:operation location="/SendingBulkEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendmailHttpPost" type="tns:SendmailHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Sending_Email">
+      <http:operation location="/Sending_Email" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendingBulkEmail">
+      <http:operation location="/SendingBulkEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Sendmail">
+    <wsdl:port name="SendmailSoap" binding="tns:SendmailSoap">
+      <soap:address location="http://sendmail.quacito.com/sendmail.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendmailSoap12" binding="tns:SendmailSoap12">
+      <soap12:address location="http://sendmail.quacito.com/sendmail.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendmailHttpGet" binding="tns:SendmailHttpGet">
+      <http:address location="http://sendmail.quacito.com/sendmail.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendmailHttpPost" binding="tns:SendmailHttpPost">
+      <http:address location="http://sendmail.quacito.com/sendmail.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

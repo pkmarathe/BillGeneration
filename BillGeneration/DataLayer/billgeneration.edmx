@@ -1,0 +1,1361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BillGenerationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BillRecieptItemInfo">
+          <Key>
+            <PropertyRef Name="BillRecieptItemId" />
+          </Key>
+          <Property Name="BillRecieptItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BillRecieptId" Type="int" Nullable="false" />
+          <Property Name="ItemName" Type="nvarchar(max)" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ItemNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mfrs" Type="nvarchar" MaxLength="100" />
+          <Property Name="BatchNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Expiry" Type="datetime" />
+          <Property Name="UOM" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BillRecieptTable">
+          <Key>
+            <PropertyRef Name="BillRecieptId" />
+          </Key>
+          <Property Name="BillRecieptId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CategoryRecieptId" Type="int" Nullable="false" />
+          <Property Name="CurrencyId" Type="int" Nullable="false" />
+          <Property Name="FontId" Type="int" Nullable="false" />
+          <Property Name="RecieptDate" Type="datetime" />
+          <Property Name="Business" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="CityState" Type="nvarchar" MaxLength="200" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="RecieptLogo" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="RecieptNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaymentType" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillRecieptDynamicHtml" Type="nvarchar(max)" />
+          <Property Name="Trans" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mcc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Auth" Type="nvarchar" MaxLength="50" />
+          <Property Name="ApprCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="WebSiteName" Type="nvarchar(max)" />
+          <Property Name="DocNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="GSTNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="AtndId" Type="nvarchar" MaxLength="50" />
+          <Property Name="FPId" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pump" Type="nvarchar" MaxLength="50" />
+          <Property Name="NozlNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fuel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Density" Type="nvarchar" MaxLength="50" />
+          <Property Name="TinNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="TRXId" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccountNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="PompaSalans" Type="nvarchar" MaxLength="50" />
+          <Property Name="NomarNota" Type="nvarchar" MaxLength="50" />
+          <Property Name="JenisBBM" Type="nvarchar" MaxLength="50" />
+          <Property Name="StationNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="HelplineNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="LandlineNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="CINNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="STNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="OPNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="TENo" Type="nvarchar" MaxLength="50" />
+          <Property Name="TCNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="REFNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Validation" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaymentService" Type="nvarchar" MaxLength="50" />
+          <Property Name="PayAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Lane" Type="nvarchar" MaxLength="50" />
+          <Property Name="Clerk" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cashier" Type="nvarchar" MaxLength="50" />
+          <Property Name="MRCH" Type="nvarchar" MaxLength="50" />
+          <Property Name="EPSSequence" Type="nvarchar" MaxLength="50" />
+          <Property Name="NetworkId" Type="nvarchar" MaxLength="50" />
+          <Property Name="TerminalId" Type="nvarchar" MaxLength="50" />
+          <Property Name="SpaceNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="TicketNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SNNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lot_Location" Type="nvarchar" MaxLength="200" />
+          <Property Name="PayedAt" Type="nvarchar" MaxLength="100" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="ExitDate" Type="datetime" />
+          <Property Name="MachName" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehicleNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehicleType" Type="nvarchar" MaxLength="100" />
+          <Property Name="RegNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="TRNNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="CSHRNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="STRNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="HelpedBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="AID" Type="nvarchar" MaxLength="100" />
+          <Property Name="Signature" Type="nvarchar" MaxLength="100" />
+          <Property Name="CVM" Type="nvarchar" MaxLength="100" />
+          <Property Name="StoreNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="PharmacyNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="OrderNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="DeliveryDate" Type="datetime" />
+          <Property Name="Host" Type="nvarchar" MaxLength="100" />
+          <Property Name="FaxNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillTo" Type="nvarchar" MaxLength="200" />
+          <Property Name="ShipTo" Type="nvarchar" MaxLength="200" />
+          <Property Name="CustomerNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerPONo" Type="nvarchar" MaxLength="200" />
+          <Property Name="CardEntry" Type="nvarchar" MaxLength="100" />
+          <Property Name="TransType" Type="nvarchar" MaxLength="100" />
+          <Property Name="CheckNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="CheckId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tip" Type="nvarchar" MaxLength="100" />
+          <Property Name="TaxiDate" Type="datetime" />
+          <Property Name="PickupTime" Type="datetime" />
+          <Property Name="DropTime" Type="datetime" />
+          <Property Name="PickupAddress" Type="nvarchar(max)" />
+          <Property Name="DropAddress" Type="nvarchar(max)" />
+          <Property Name="TaxiKM" Type="nvarchar" MaxLength="100" />
+          <Property Name="CarName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Miles" Type="nvarchar" MaxLength="100" />
+          <Property Name="TaxiWTTime" Type="datetime" />
+          <Property Name="BaseFare" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DistanceFare" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TimeFare" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SubCharges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SafeRideFee" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TaxiCallNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProfileImage" Type="nvarchar" MaxLength="100" />
+          <Property Name="LiftLineDiscountPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PromotionalPricing" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RideBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="LicensePlate" Type="nvarchar" MaxLength="100" />
+          <Property Name="TollPlaza" Type="nvarchar" MaxLength="100" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="100" />
+          <Property Name="Section" Type="nvarchar" MaxLength="100" />
+          <Property Name="VehicleStanderedWeight" Type="nvarchar" MaxLength="100" />
+          <Property Name="VehicleActualWeight" Type="nvarchar" MaxLength="100" />
+          <Property Name="OverloadedVehicleFee" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Shift" Type="nvarchar" MaxLength="100" />
+          <Property Name="Journey" Type="nvarchar" MaxLength="100" />
+          <Property Name="TCId" Type="nvarchar" MaxLength="100" />
+          <Property Name="BarCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CSH" Type="nvarchar" MaxLength="100" />
+          <Property Name="RelationShipNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillDate" Type="datetime" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="LandMark" Type="nvarchar" MaxLength="200" />
+          <Property Name="BillPeriod" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillPayDate" Type="datetime" />
+          <Property Name="CreditLimit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SecurityDeposit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PreviousBalance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Payments" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Adjustments" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LatePaymentFee" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MonthlyRentals" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="UsageCharges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OneTimeCharges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Taxes" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ServiceTaxRegNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="FixedlineNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="BroadbandId" Type="nvarchar" MaxLength="100" />
+          <Property Name="AlternateMobileNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShipToStateCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="BillGenerateBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="SoldBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="SyNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="PANNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="InvoiceDetails" Type="nvarchar" MaxLength="100" />
+          <Property Name="AadharNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="MemberShip" Type="nvarchar" MaxLength="100" />
+          <Property Name="UsageP_ISD_IRCalling" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="UsageDataCharges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="UsageSMSCharges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="UsageVASCharges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CurruntMonthDiscount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BillDiscountWithTax" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BillToEmailId" Type="nvarchar" MaxLength="100" />
+          <Property Name="Rating" Type="int" />
+        </EntityType>
+        <EntityType Name="BillRecieptTaxInfo">
+          <Key>
+            <PropertyRef Name="BillRecieptTaxId" />
+          </Key>
+          <Property Name="BillRecieptTaxId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BillRecieptId" Type="int" Nullable="false" />
+          <Property Name="TaxId" Type="int" Nullable="false" />
+          <Property Name="TaxInPercentage" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="CategoryMaster">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CategoryRecieptMaster">
+          <Key>
+            <PropertyRef Name="CategoryRecieptId" />
+          </Key>
+          <Property Name="CategoryRecieptId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="FontId" Type="int" Nullable="false" />
+          <Property Name="BillRecieptName" Type="nvarchar(max)" />
+          <Property Name="BillRecieptDynamicHtml" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="BillRecieptSampleImage" Type="nvarchar" MaxLength="200" />
+          <Property Name="RecieptType" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillRecieptPdfHtml" Type="nvarchar(max)" />
+          <Property Name="IsRecieptLogo" Type="bit" />
+          <Property Name="ReceiptWidth" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReceiptHight" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CurrencyMaster">
+          <Key>
+            <PropertyRef Name="CurrencyId" />
+          </Key>
+          <Property Name="CurrencyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="FontMaster">
+          <Key>
+            <PropertyRef Name="FontId" />
+          </Key>
+          <Property Name="FontId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FontStyle" Type="nvarchar" MaxLength="100" />
+          <Property Name="FontLink" Type="nvarchar(max)" />
+          <Property Name="FontClass" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="RegistrationTable">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="TermsOfUse" Type="nvarchar" MaxLength="100" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProfileImage" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SubscriptionPlan">
+          <Key>
+            <PropertyRef Name="SubscriptionPlanId" />
+          </Key>
+          <Property Name="SubscriptionPlanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubscriptionPlan" Type="nvarchar" MaxLength="100" />
+          <Property Name="SubscriptionPlanDesc" Type="nvarchar" MaxLength="200" />
+          <Property Name="PaymentType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Amount" Type="nvarchar" MaxLength="50" />
+          <Property Name="Color" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SubscriptionPlanPayment">
+          <Key>
+            <PropertyRef Name="SubscriptionPlanPayId" />
+          </Key>
+          <Property Name="SubscriptionPlanPayId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="SubscriptionPlanId" Type="int" Nullable="false" />
+          <Property Name="PaymentAmount" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionId" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="CardNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="CardName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExpMonth" Type="bigint" />
+          <Property Name="ExpYear" Type="bigint" />
+          <Property Name="Cvc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChargeId" Type="nvarchar" MaxLength="500" />
+          <Property Name="Created" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="LiveMode" Type="bit" />
+          <Property Name="PaymentMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReceiptUrl" Type="nvarchar(max)" />
+          <Property Name="ReceiptNumber" Type="nvarchar" MaxLength="500" />
+          <Property Name="TrackingNumber" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="SubscriptionFromDate" Type="datetime" />
+          <Property Name="SubscriptionToDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TaxMaster">
+          <Key>
+            <PropertyRef Name="TaxId" />
+          </Key>
+          <Property Name="TaxId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tax" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <Association Name="FK_BillRecieptItemInfo_BillRecieptId">
+          <End Role="BillRecieptTable" Type="Self.BillRecieptTable" Multiplicity="1" />
+          <End Role="BillRecieptItemInfo" Type="Self.BillRecieptItemInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillRecieptTable">
+              <PropertyRef Name="BillRecieptId" />
+            </Principal>
+            <Dependent Role="BillRecieptItemInfo">
+              <PropertyRef Name="BillRecieptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillRecieptTable_CategoryRecieptId">
+          <End Role="CategoryRecieptMaster" Type="Self.CategoryRecieptMaster" Multiplicity="1" />
+          <End Role="BillRecieptTable" Type="Self.BillRecieptTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryRecieptMaster">
+              <PropertyRef Name="CategoryRecieptId" />
+            </Principal>
+            <Dependent Role="BillRecieptTable">
+              <PropertyRef Name="CategoryRecieptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillRecieptTable_CurrencyId">
+          <End Role="CurrencyMaster" Type="Self.CurrencyMaster" Multiplicity="1" />
+          <End Role="BillRecieptTable" Type="Self.BillRecieptTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurrencyMaster">
+              <PropertyRef Name="CurrencyId" />
+            </Principal>
+            <Dependent Role="BillRecieptTable">
+              <PropertyRef Name="CurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillRecieptTable_FontId">
+          <End Role="FontMaster" Type="Self.FontMaster" Multiplicity="1" />
+          <End Role="BillRecieptTable" Type="Self.BillRecieptTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FontMaster">
+              <PropertyRef Name="FontId" />
+            </Principal>
+            <Dependent Role="BillRecieptTable">
+              <PropertyRef Name="FontId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillRecieptTable_UserId">
+          <End Role="RegistrationTable" Type="Self.RegistrationTable" Multiplicity="1" />
+          <End Role="BillRecieptTable" Type="Self.BillRecieptTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegistrationTable">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="BillRecieptTable">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillRecieptTaxInfo_BillRecieptId">
+          <End Role="BillRecieptTable" Type="Self.BillRecieptTable" Multiplicity="1" />
+          <End Role="BillRecieptTaxInfo" Type="Self.BillRecieptTaxInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillRecieptTable">
+              <PropertyRef Name="BillRecieptId" />
+            </Principal>
+            <Dependent Role="BillRecieptTaxInfo">
+              <PropertyRef Name="BillRecieptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillRecieptTaxInfo_TaxId">
+          <End Role="TaxMaster" Type="Self.TaxMaster" Multiplicity="1" />
+          <End Role="BillRecieptTaxInfo" Type="Self.BillRecieptTaxInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaxMaster">
+              <PropertyRef Name="TaxId" />
+            </Principal>
+            <Dependent Role="BillRecieptTaxInfo">
+              <PropertyRef Name="TaxId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryRecieptMaster_CategoryId">
+          <End Role="CategoryMaster" Type="Self.CategoryMaster" Multiplicity="1" />
+          <End Role="CategoryRecieptMaster" Type="Self.CategoryRecieptMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryMaster">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="CategoryRecieptMaster">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryRecieptMaster_FontId">
+          <End Role="FontMaster" Type="Self.FontMaster" Multiplicity="1" />
+          <End Role="CategoryRecieptMaster" Type="Self.CategoryRecieptMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FontMaster">
+              <PropertyRef Name="FontId" />
+            </Principal>
+            <Dependent Role="CategoryRecieptMaster">
+              <PropertyRef Name="FontId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubscriptionPlanPayment_SubscriptionPlanId">
+          <End Role="SubscriptionPlan" Type="Self.SubscriptionPlan" Multiplicity="1" />
+          <End Role="SubscriptionPlanPayment" Type="Self.SubscriptionPlanPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubscriptionPlan">
+              <PropertyRef Name="SubscriptionPlanId" />
+            </Principal>
+            <Dependent Role="SubscriptionPlanPayment">
+              <PropertyRef Name="SubscriptionPlanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubscriptionPlanPayment_UserId">
+          <End Role="RegistrationTable" Type="Self.RegistrationTable" Multiplicity="1" />
+          <End Role="SubscriptionPlanPayment" Type="Self.SubscriptionPlanPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegistrationTable">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="SubscriptionPlanPayment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BillGenerationModelStoreContainer">
+          <EntitySet Name="BillRecieptItemInfo" EntityType="Self.BillRecieptItemInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BillRecieptTable" EntityType="Self.BillRecieptTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BillRecieptTaxInfo" EntityType="Self.BillRecieptTaxInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoryMaster" EntityType="Self.CategoryMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoryRecieptMaster" EntityType="Self.CategoryRecieptMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurrencyMaster" EntityType="Self.CurrencyMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FontMaster" EntityType="Self.FontMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegistrationTable" EntityType="Self.RegistrationTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubscriptionPlan" EntityType="Self.SubscriptionPlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubscriptionPlanPayment" EntityType="Self.SubscriptionPlanPayment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaxMaster" EntityType="Self.TaxMaster" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BillRecieptItemInfo_BillRecieptId" Association="Self.FK_BillRecieptItemInfo_BillRecieptId">
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTable" />
+            <End Role="BillRecieptItemInfo" EntitySet="BillRecieptItemInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillRecieptTable_CategoryRecieptId" Association="Self.FK_BillRecieptTable_CategoryRecieptId">
+            <End Role="CategoryRecieptMaster" EntitySet="CategoryRecieptMaster" />
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillRecieptTable_CurrencyId" Association="Self.FK_BillRecieptTable_CurrencyId">
+            <End Role="CurrencyMaster" EntitySet="CurrencyMaster" />
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillRecieptTable_FontId" Association="Self.FK_BillRecieptTable_FontId">
+            <End Role="FontMaster" EntitySet="FontMaster" />
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillRecieptTable_UserId" Association="Self.FK_BillRecieptTable_UserId">
+            <End Role="RegistrationTable" EntitySet="RegistrationTable" />
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillRecieptTaxInfo_BillRecieptId" Association="Self.FK_BillRecieptTaxInfo_BillRecieptId">
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTable" />
+            <End Role="BillRecieptTaxInfo" EntitySet="BillRecieptTaxInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillRecieptTaxInfo_TaxId" Association="Self.FK_BillRecieptTaxInfo_TaxId">
+            <End Role="TaxMaster" EntitySet="TaxMaster" />
+            <End Role="BillRecieptTaxInfo" EntitySet="BillRecieptTaxInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryRecieptMaster_CategoryId" Association="Self.FK_CategoryRecieptMaster_CategoryId">
+            <End Role="CategoryMaster" EntitySet="CategoryMaster" />
+            <End Role="CategoryRecieptMaster" EntitySet="CategoryRecieptMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryRecieptMaster_FontId" Association="Self.FK_CategoryRecieptMaster_FontId">
+            <End Role="FontMaster" EntitySet="FontMaster" />
+            <End Role="CategoryRecieptMaster" EntitySet="CategoryRecieptMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubscriptionPlanPayment_SubscriptionPlanId" Association="Self.FK_SubscriptionPlanPayment_SubscriptionPlanId">
+            <End Role="SubscriptionPlan" EntitySet="SubscriptionPlan" />
+            <End Role="SubscriptionPlanPayment" EntitySet="SubscriptionPlanPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubscriptionPlanPayment_UserId" Association="Self.FK_SubscriptionPlanPayment_UserId">
+            <End Role="RegistrationTable" EntitySet="RegistrationTable" />
+            <End Role="SubscriptionPlanPayment" EntitySet="SubscriptionPlanPayment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BillGenerationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CategoryMaster">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CategoryRecieptMasters" Relationship="BillGenerationModel.FK_CategoryRecieptMaster_CategoryId" FromRole="CategoryMaster" ToRole="CategoryRecieptMaster" />
+        </EntityType>
+        <EntityType Name="CurrencyMaster">
+          <Key>
+            <PropertyRef Name="CurrencyId" />
+          </Key>
+          <Property Name="CurrencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="BillRecieptTables" Relationship="BillGenerationModel.FK_BillRecieptTable_CurrencyId" FromRole="CurrencyMaster" ToRole="BillRecieptTable" />
+        </EntityType>
+        <EntityType Name="RegistrationTable">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TermsOfUse" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProfileImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BillRecieptTables" Relationship="BillGenerationModel.FK_BillRecieptTable_UserId" FromRole="RegistrationTable" ToRole="BillRecieptTable" />
+          <NavigationProperty Name="SubscriptionPlanPayments" Relationship="BillGenerationModel.FK_SubscriptionPlanPayment_UserId" FromRole="RegistrationTable" ToRole="SubscriptionPlanPayment" />
+        </EntityType>
+        <EntityType Name="TaxMaster">
+          <Key>
+            <PropertyRef Name="TaxId" />
+          </Key>
+          <Property Name="TaxId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="BillRecieptTaxInfoes" Relationship="BillGenerationModel.FK_BillRecieptTaxInfo_TaxId" FromRole="TaxMaster" ToRole="BillRecieptTaxInfo" />
+        </EntityType>
+        <EntityContainer Name="BillGenerationEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CategoryMasters" EntityType="Self.CategoryMaster" />
+          <EntitySet Name="CurrencyMasters" EntityType="Self.CurrencyMaster" />
+          <EntitySet Name="RegistrationTables" EntityType="Self.RegistrationTable" />
+          <EntitySet Name="TaxMasters" EntityType="Self.TaxMaster" />
+          <EntitySet Name="FontMasters" EntityType="BillGenerationModel.FontMaster" />
+          <EntitySet Name="CategoryRecieptMasters" EntityType="BillGenerationModel.CategoryRecieptMaster" />
+          <AssociationSet Name="FK_CategoryRecieptMaster_CategoryId" Association="BillGenerationModel.FK_CategoryRecieptMaster_CategoryId">
+            <End Role="CategoryMaster" EntitySet="CategoryMasters" />
+            <End Role="CategoryRecieptMaster" EntitySet="CategoryRecieptMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryRecieptMaster_FontId" Association="BillGenerationModel.FK_CategoryRecieptMaster_FontId">
+            <End Role="FontMaster" EntitySet="FontMasters" />
+            <End Role="CategoryRecieptMaster" EntitySet="CategoryRecieptMasters" />
+          </AssociationSet>
+          <EntitySet Name="BillRecieptTables" EntityType="BillGenerationModel.BillRecieptTable" />
+          <AssociationSet Name="FK_BillRecieptTable_CategoryRecieptId" Association="BillGenerationModel.FK_BillRecieptTable_CategoryRecieptId">
+            <End Role="CategoryRecieptMaster" EntitySet="CategoryRecieptMasters" />
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillRecieptTable_CurrencyId" Association="BillGenerationModel.FK_BillRecieptTable_CurrencyId">
+            <End Role="CurrencyMaster" EntitySet="CurrencyMasters" />
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillRecieptTable_FontId" Association="BillGenerationModel.FK_BillRecieptTable_FontId">
+            <End Role="FontMaster" EntitySet="FontMasters" />
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillRecieptTable_UserId" Association="BillGenerationModel.FK_BillRecieptTable_UserId">
+            <End Role="RegistrationTable" EntitySet="RegistrationTables" />
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTables" />
+          </AssociationSet>
+          <EntitySet Name="BillRecieptItemInfoes" EntityType="BillGenerationModel.BillRecieptItemInfo" />
+          <EntitySet Name="BillRecieptTaxInfoes" EntityType="BillGenerationModel.BillRecieptTaxInfo" />
+          <AssociationSet Name="FK_BillRecieptItemInfo_BillRecieptId" Association="BillGenerationModel.FK_BillRecieptItemInfo_BillRecieptId">
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTables" />
+            <End Role="BillRecieptItemInfo" EntitySet="BillRecieptItemInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillRecieptTaxInfo_BillRecieptId" Association="BillGenerationModel.FK_BillRecieptTaxInfo_BillRecieptId">
+            <End Role="BillRecieptTable" EntitySet="BillRecieptTables" />
+            <End Role="BillRecieptTaxInfo" EntitySet="BillRecieptTaxInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillRecieptTaxInfo_TaxId" Association="BillGenerationModel.FK_BillRecieptTaxInfo_TaxId">
+            <End Role="TaxMaster" EntitySet="TaxMasters" />
+            <End Role="BillRecieptTaxInfo" EntitySet="BillRecieptTaxInfoes" />
+          </AssociationSet>
+          <EntitySet Name="SubscriptionPlans" EntityType="BillGenerationModel.SubscriptionPlan" />
+          <EntitySet Name="SubscriptionPlanPayments" EntityType="BillGenerationModel.SubscriptionPlanPayment" />
+          <AssociationSet Name="FK_SubscriptionPlanPayment_UserId" Association="BillGenerationModel.FK_SubscriptionPlanPayment_UserId">
+            <End Role="RegistrationTable" EntitySet="RegistrationTables" />
+            <End Role="SubscriptionPlanPayment" EntitySet="SubscriptionPlanPayments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubscriptionPlanPayment_SubscriptionPlanId" Association="BillGenerationModel.FK_SubscriptionPlanPayment_SubscriptionPlanId">
+            <End Role="SubscriptionPlan" EntitySet="SubscriptionPlans" />
+            <End Role="SubscriptionPlanPayment" EntitySet="SubscriptionPlanPayments" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="FontMaster">
+          <Key>
+            <PropertyRef Name="FontId" />
+          </Key>
+          <Property Name="FontId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FontStyle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FontLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FontClass" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="CategoryRecieptMasters" Relationship="BillGenerationModel.FK_CategoryRecieptMaster_FontId" FromRole="FontMaster" ToRole="CategoryRecieptMaster" />
+          <NavigationProperty Name="BillRecieptTables" Relationship="BillGenerationModel.FK_BillRecieptTable_FontId" FromRole="FontMaster" ToRole="BillRecieptTable" />
+        </EntityType>
+        <EntityType Name="CategoryRecieptMaster">
+          <Key>
+            <PropertyRef Name="CategoryRecieptId" />
+          </Key>
+          <Property Name="CategoryRecieptId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="FontId" Type="Int32" Nullable="false" />
+          <Property Name="BillRecieptName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BillRecieptDynamicHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="BillRecieptSampleImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RecieptType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillRecieptPdfHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsRecieptLogo" Type="Boolean" />
+          <Property Name="ReceiptWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReceiptHight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CategoryMaster" Relationship="BillGenerationModel.FK_CategoryRecieptMaster_CategoryId" FromRole="CategoryRecieptMaster" ToRole="CategoryMaster" />
+          <NavigationProperty Name="FontMaster" Relationship="BillGenerationModel.FK_CategoryRecieptMaster_FontId" FromRole="CategoryRecieptMaster" ToRole="FontMaster" />
+          <NavigationProperty Name="BillRecieptTables" Relationship="BillGenerationModel.FK_BillRecieptTable_CategoryRecieptId" FromRole="CategoryRecieptMaster" ToRole="BillRecieptTable" />
+        </EntityType>
+        <Association Name="FK_CategoryRecieptMaster_CategoryId">
+          <End Type="BillGenerationModel.CategoryMaster" Role="CategoryMaster" Multiplicity="1" />
+          <End Type="BillGenerationModel.CategoryRecieptMaster" Role="CategoryRecieptMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryMaster">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="CategoryRecieptMaster">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryRecieptMaster_FontId">
+          <End Type="BillGenerationModel.FontMaster" Role="FontMaster" Multiplicity="1" />
+          <End Type="BillGenerationModel.CategoryRecieptMaster" Role="CategoryRecieptMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FontMaster">
+              <PropertyRef Name="FontId" />
+            </Principal>
+            <Dependent Role="CategoryRecieptMaster">
+              <PropertyRef Name="FontId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BillRecieptTable">
+          <Key>
+            <PropertyRef Name="BillRecieptId" />
+          </Key>
+          <Property Name="BillRecieptId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryRecieptId" Type="Int32" Nullable="false" />
+          <Property Name="CurrencyId" Type="Int32" Nullable="false" />
+          <Property Name="FontId" Type="Int32" Nullable="false" />
+          <Property Name="RecieptDate" Type="DateTime" Precision="3" />
+          <Property Name="Business" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CityState" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RecieptLogo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="RecieptNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillRecieptDynamicHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Trans" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mcc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Auth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApprCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WebSiteName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DocNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GSTNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AtndId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FPId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pump" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NozlNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fuel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Density" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TinNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TRXId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PompaSalans" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NomarNota" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JenisBBM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HelplineNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LandlineNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CINNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OPNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TCNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REFNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Validation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentService" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PayAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Lane" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Clerk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cashier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MRCH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EPSSequence" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NetworkId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TerminalId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SpaceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TicketNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SNNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lot_Location" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PayedAt" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="ExitDate" Type="DateTime" Precision="3" />
+          <Property Name="MachName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RegNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TRNNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CSHRNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STRNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HelpedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Signature" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CVM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="StoreNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PharmacyNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OrderNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="Host" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FaxNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BillTo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ShipTo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerPONo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CardEntry" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TransType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CheckNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CheckId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tip" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TaxiDate" Type="DateTime" Precision="3" />
+          <Property Name="PickupTime" Type="DateTime" Precision="3" />
+          <Property Name="DropTime" Type="DateTime" Precision="3" />
+          <Property Name="PickupAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DropAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaxiKM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CarName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Miles" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TaxiWTTime" Type="DateTime" Precision="3" />
+          <Property Name="BaseFare" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DistanceFare" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TimeFare" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SubCharges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SafeRideFee" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TaxiCallNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ProfileImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LiftLineDiscountPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PromotionalPricing" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RideBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LicensePlate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TollPlaza" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Operator" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Section" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleStanderedWeight" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleActualWeight" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OverloadedVehicleFee" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Shift" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Journey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TCId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BarCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CSH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RelationShipNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BillDate" Type="DateTime" Precision="3" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="LandMark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BillPeriod" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BillPayDate" Type="DateTime" Precision="3" />
+          <Property Name="CreditLimit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SecurityDeposit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PreviousBalance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Payments" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Adjustments" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LatePaymentFee" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MonthlyRentals" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="UsageCharges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OneTimeCharges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Taxes" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ServiceTaxRegNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FixedlineNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BroadbandId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AlternateMobileNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ShipToStateCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BillGenerateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SoldBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SyNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PANNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AadharNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MemberShip" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UsageP_ISD_IRCalling" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="UsageDataCharges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="UsageSMSCharges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="UsageVASCharges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CurruntMonthDiscount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BillDiscountWithTax" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="CategoryRecieptMaster" Relationship="BillGenerationModel.FK_BillRecieptTable_CategoryRecieptId" FromRole="BillRecieptTable" ToRole="CategoryRecieptMaster" />
+          <NavigationProperty Name="CurrencyMaster" Relationship="BillGenerationModel.FK_BillRecieptTable_CurrencyId" FromRole="BillRecieptTable" ToRole="CurrencyMaster" />
+          <NavigationProperty Name="FontMaster" Relationship="BillGenerationModel.FK_BillRecieptTable_FontId" FromRole="BillRecieptTable" ToRole="FontMaster" />
+          <NavigationProperty Name="RegistrationTable" Relationship="BillGenerationModel.FK_BillRecieptTable_UserId" FromRole="BillRecieptTable" ToRole="RegistrationTable" />
+          <NavigationProperty Name="BillRecieptItemInfoes" Relationship="BillGenerationModel.FK_BillRecieptItemInfo_BillRecieptId" FromRole="BillRecieptTable" ToRole="BillRecieptItemInfo" />
+          <NavigationProperty Name="BillRecieptTaxInfoes" Relationship="BillGenerationModel.FK_BillRecieptTaxInfo_BillRecieptId" FromRole="BillRecieptTable" ToRole="BillRecieptTaxInfo" />
+          <Property Name="BillToEmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Rating" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_BillRecieptTable_CategoryRecieptId">
+          <End Type="BillGenerationModel.CategoryRecieptMaster" Role="CategoryRecieptMaster" Multiplicity="1" />
+          <End Type="BillGenerationModel.BillRecieptTable" Role="BillRecieptTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryRecieptMaster">
+              <PropertyRef Name="CategoryRecieptId" />
+            </Principal>
+            <Dependent Role="BillRecieptTable">
+              <PropertyRef Name="CategoryRecieptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillRecieptTable_CurrencyId">
+          <End Type="BillGenerationModel.CurrencyMaster" Role="CurrencyMaster" Multiplicity="1" />
+          <End Type="BillGenerationModel.BillRecieptTable" Role="BillRecieptTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurrencyMaster">
+              <PropertyRef Name="CurrencyId" />
+            </Principal>
+            <Dependent Role="BillRecieptTable">
+              <PropertyRef Name="CurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillRecieptTable_FontId">
+          <End Type="BillGenerationModel.FontMaster" Role="FontMaster" Multiplicity="1" />
+          <End Type="BillGenerationModel.BillRecieptTable" Role="BillRecieptTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FontMaster">
+              <PropertyRef Name="FontId" />
+            </Principal>
+            <Dependent Role="BillRecieptTable">
+              <PropertyRef Name="FontId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillRecieptTable_UserId">
+          <End Type="BillGenerationModel.RegistrationTable" Role="RegistrationTable" Multiplicity="1" />
+          <End Type="BillGenerationModel.BillRecieptTable" Role="BillRecieptTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegistrationTable">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="BillRecieptTable">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BillRecieptItemInfo">
+          <Key>
+            <PropertyRef Name="BillRecieptItemId" />
+          </Key>
+          <Property Name="BillRecieptItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BillRecieptId" Type="Int32" Nullable="false" />
+          <Property Name="ItemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ItemNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mfrs" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BatchNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Expiry" Type="DateTime" Precision="3" />
+          <Property Name="UOM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BillRecieptTable" Relationship="BillGenerationModel.FK_BillRecieptItemInfo_BillRecieptId" FromRole="BillRecieptItemInfo" ToRole="BillRecieptTable" />
+        </EntityType>
+        <EntityType Name="BillRecieptTaxInfo">
+          <Key>
+            <PropertyRef Name="BillRecieptTaxId" />
+          </Key>
+          <Property Name="BillRecieptTaxId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BillRecieptId" Type="Int32" Nullable="false" />
+          <Property Name="TaxId" Type="Int32" Nullable="false" />
+          <Property Name="TaxInPercentage" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="BillRecieptTable" Relationship="BillGenerationModel.FK_BillRecieptTaxInfo_BillRecieptId" FromRole="BillRecieptTaxInfo" ToRole="BillRecieptTable" />
+          <NavigationProperty Name="TaxMaster" Relationship="BillGenerationModel.FK_BillRecieptTaxInfo_TaxId" FromRole="BillRecieptTaxInfo" ToRole="TaxMaster" />
+        </EntityType>
+        <Association Name="FK_BillRecieptItemInfo_BillRecieptId">
+          <End Type="BillGenerationModel.BillRecieptTable" Role="BillRecieptTable" Multiplicity="1" />
+          <End Type="BillGenerationModel.BillRecieptItemInfo" Role="BillRecieptItemInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillRecieptTable">
+              <PropertyRef Name="BillRecieptId" />
+            </Principal>
+            <Dependent Role="BillRecieptItemInfo">
+              <PropertyRef Name="BillRecieptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillRecieptTaxInfo_BillRecieptId">
+          <End Type="BillGenerationModel.BillRecieptTable" Role="BillRecieptTable" Multiplicity="1" />
+          <End Type="BillGenerationModel.BillRecieptTaxInfo" Role="BillRecieptTaxInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillRecieptTable">
+              <PropertyRef Name="BillRecieptId" />
+            </Principal>
+            <Dependent Role="BillRecieptTaxInfo">
+              <PropertyRef Name="BillRecieptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillRecieptTaxInfo_TaxId">
+          <End Type="BillGenerationModel.TaxMaster" Role="TaxMaster" Multiplicity="1" />
+          <End Type="BillGenerationModel.BillRecieptTaxInfo" Role="BillRecieptTaxInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaxMaster">
+              <PropertyRef Name="TaxId" />
+            </Principal>
+            <Dependent Role="BillRecieptTaxInfo">
+              <PropertyRef Name="TaxId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SubscriptionPlan">
+          <Key>
+            <PropertyRef Name="SubscriptionPlanId" />
+          </Key>
+          <Property Name="SubscriptionPlanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubscriptionPlan1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SubscriptionPlanDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SubscriptionPlanPayments" Relationship="BillGenerationModel.FK_SubscriptionPlanPayment_SubscriptionPlanId" FromRole="SubscriptionPlan" ToRole="SubscriptionPlanPayment" />
+        </EntityType>
+        <EntityType Name="SubscriptionPlanPayment">
+          <Key>
+            <PropertyRef Name="SubscriptionPlanPayId" />
+          </Key>
+          <Property Name="SubscriptionPlanPayId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="SubscriptionPlanId" Type="Int32" Nullable="false" />
+          <Property Name="PaymentAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CardName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExpMonth" Type="Int64" />
+          <Property Name="ExpYear" Type="Int64" />
+          <Property Name="Cvc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChargeId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LiveMode" Type="Boolean" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReceiptUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReceiptNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TrackingNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="SubscriptionFromDate" Type="DateTime" Precision="3" />
+          <Property Name="SubscriptionToDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="RegistrationTable" Relationship="BillGenerationModel.FK_SubscriptionPlanPayment_UserId" FromRole="SubscriptionPlanPayment" ToRole="RegistrationTable" />
+          <NavigationProperty Name="SubscriptionPlan" Relationship="BillGenerationModel.FK_SubscriptionPlanPayment_SubscriptionPlanId" FromRole="SubscriptionPlanPayment" ToRole="SubscriptionPlan" />
+        </EntityType>
+        <Association Name="FK_SubscriptionPlanPayment_UserId">
+          <End Type="BillGenerationModel.RegistrationTable" Role="RegistrationTable" Multiplicity="1" />
+          <End Type="BillGenerationModel.SubscriptionPlanPayment" Role="SubscriptionPlanPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RegistrationTable">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="SubscriptionPlanPayment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubscriptionPlanPayment_SubscriptionPlanId">
+          <End Type="BillGenerationModel.SubscriptionPlan" Role="SubscriptionPlan" Multiplicity="1" />
+          <End Type="BillGenerationModel.SubscriptionPlanPayment" Role="SubscriptionPlanPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubscriptionPlan">
+              <PropertyRef Name="SubscriptionPlanId" />
+            </Principal>
+            <Dependent Role="SubscriptionPlanPayment">
+              <PropertyRef Name="SubscriptionPlanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BillGenerationModelStoreContainer" CdmEntityContainer="BillGenerationEntities">
+          <EntitySetMapping Name="CategoryMasters">
+            <EntityTypeMapping TypeName="BillGenerationModel.CategoryMaster">
+              <MappingFragment StoreEntitySet="CategoryMaster">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurrencyMasters">
+            <EntityTypeMapping TypeName="BillGenerationModel.CurrencyMaster">
+              <MappingFragment StoreEntitySet="CurrencyMaster">
+                <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegistrationTables">
+            <EntityTypeMapping TypeName="BillGenerationModel.RegistrationTable">
+              <MappingFragment StoreEntitySet="RegistrationTable">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="TermsOfUse" ColumnName="TermsOfUse" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaxMasters">
+            <EntityTypeMapping TypeName="BillGenerationModel.TaxMaster">
+              <MappingFragment StoreEntitySet="TaxMaster">
+                <ScalarProperty Name="TaxId" ColumnName="TaxId" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FontMasters">
+            <EntityTypeMapping TypeName="BillGenerationModel.FontMaster">
+              <MappingFragment StoreEntitySet="FontMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="FontClass" ColumnName="FontClass" />
+                <ScalarProperty Name="FontLink" ColumnName="FontLink" />
+                <ScalarProperty Name="FontStyle" ColumnName="FontStyle" />
+                <ScalarProperty Name="FontId" ColumnName="FontId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoryRecieptMasters">
+            <EntityTypeMapping TypeName="BillGenerationModel.CategoryRecieptMaster">
+              <MappingFragment StoreEntitySet="CategoryRecieptMaster">
+                <ScalarProperty Name="ReceiptHight" ColumnName="ReceiptHight" />
+                <ScalarProperty Name="ReceiptWidth" ColumnName="ReceiptWidth" />
+                <ScalarProperty Name="IsRecieptLogo" ColumnName="IsRecieptLogo" />
+                <ScalarProperty Name="BillRecieptPdfHtml" ColumnName="BillRecieptPdfHtml" />
+                <ScalarProperty Name="RecieptType" ColumnName="RecieptType" />
+                <ScalarProperty Name="BillRecieptSampleImage" ColumnName="BillRecieptSampleImage" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="BillRecieptDynamicHtml" ColumnName="BillRecieptDynamicHtml" />
+                <ScalarProperty Name="BillRecieptName" ColumnName="BillRecieptName" />
+                <ScalarProperty Name="FontId" ColumnName="FontId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryRecieptId" ColumnName="CategoryRecieptId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillRecieptTables">
+            <EntityTypeMapping TypeName="BillGenerationModel.BillRecieptTable">
+              <MappingFragment StoreEntitySet="BillRecieptTable">
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="BillToEmailId" ColumnName="BillToEmailId" />
+                <ScalarProperty Name="BillDiscountWithTax" ColumnName="BillDiscountWithTax" />
+                <ScalarProperty Name="CurruntMonthDiscount" ColumnName="CurruntMonthDiscount" />
+                <ScalarProperty Name="UsageVASCharges" ColumnName="UsageVASCharges" />
+                <ScalarProperty Name="UsageSMSCharges" ColumnName="UsageSMSCharges" />
+                <ScalarProperty Name="UsageDataCharges" ColumnName="UsageDataCharges" />
+                <ScalarProperty Name="UsageP_ISD_IRCalling" ColumnName="UsageP_ISD_IRCalling" />
+                <ScalarProperty Name="MemberShip" ColumnName="MemberShip" />
+                <ScalarProperty Name="AadharNo" ColumnName="AadharNo" />
+                <ScalarProperty Name="InvoiceDetails" ColumnName="InvoiceDetails" />
+                <ScalarProperty Name="PANNo" ColumnName="PANNo" />
+                <ScalarProperty Name="SyNo" ColumnName="SyNo" />
+                <ScalarProperty Name="SoldBy" ColumnName="SoldBy" />
+                <ScalarProperty Name="BillGenerateBy" ColumnName="BillGenerateBy" />
+                <ScalarProperty Name="ShipToStateCode" ColumnName="ShipToStateCode" />
+                <ScalarProperty Name="AlternateMobileNo" ColumnName="AlternateMobileNo" />
+                <ScalarProperty Name="BroadbandId" ColumnName="BroadbandId" />
+                <ScalarProperty Name="FixedlineNo" ColumnName="FixedlineNo" />
+                <ScalarProperty Name="ServiceTaxRegNo" ColumnName="ServiceTaxRegNo" />
+                <ScalarProperty Name="Taxes" ColumnName="Taxes" />
+                <ScalarProperty Name="OneTimeCharges" ColumnName="OneTimeCharges" />
+                <ScalarProperty Name="UsageCharges" ColumnName="UsageCharges" />
+                <ScalarProperty Name="MonthlyRentals" ColumnName="MonthlyRentals" />
+                <ScalarProperty Name="LatePaymentFee" ColumnName="LatePaymentFee" />
+                <ScalarProperty Name="Adjustments" ColumnName="Adjustments" />
+                <ScalarProperty Name="Payments" ColumnName="Payments" />
+                <ScalarProperty Name="PreviousBalance" ColumnName="PreviousBalance" />
+                <ScalarProperty Name="SecurityDeposit" ColumnName="SecurityDeposit" />
+                <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+                <ScalarProperty Name="BillPayDate" ColumnName="BillPayDate" />
+                <ScalarProperty Name="BillPeriod" ColumnName="BillPeriod" />
+                <ScalarProperty Name="LandMark" ColumnName="LandMark" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="BillDate" ColumnName="BillDate" />
+                <ScalarProperty Name="RelationShipNo" ColumnName="RelationShipNo" />
+                <ScalarProperty Name="CSH" ColumnName="CSH" />
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="TCId" ColumnName="TCId" />
+                <ScalarProperty Name="Journey" ColumnName="Journey" />
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="OverloadedVehicleFee" ColumnName="OverloadedVehicleFee" />
+                <ScalarProperty Name="VehicleActualWeight" ColumnName="VehicleActualWeight" />
+                <ScalarProperty Name="VehicleStanderedWeight" ColumnName="VehicleStanderedWeight" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="TollPlaza" ColumnName="TollPlaza" />
+                <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+                <ScalarProperty Name="RideBy" ColumnName="RideBy" />
+                <ScalarProperty Name="PromotionalPricing" ColumnName="PromotionalPricing" />
+                <ScalarProperty Name="LiftLineDiscountPrice" ColumnName="LiftLineDiscountPrice" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="TaxiCallNo" ColumnName="TaxiCallNo" />
+                <ScalarProperty Name="SafeRideFee" ColumnName="SafeRideFee" />
+                <ScalarProperty Name="SubCharges" ColumnName="SubCharges" />
+                <ScalarProperty Name="TimeFare" ColumnName="TimeFare" />
+                <ScalarProperty Name="DistanceFare" ColumnName="DistanceFare" />
+                <ScalarProperty Name="BaseFare" ColumnName="BaseFare" />
+                <ScalarProperty Name="TaxiWTTime" ColumnName="TaxiWTTime" />
+                <ScalarProperty Name="Miles" ColumnName="Miles" />
+                <ScalarProperty Name="CarName" ColumnName="CarName" />
+                <ScalarProperty Name="TaxiKM" ColumnName="TaxiKM" />
+                <ScalarProperty Name="DropAddress" ColumnName="DropAddress" />
+                <ScalarProperty Name="PickupAddress" ColumnName="PickupAddress" />
+                <ScalarProperty Name="DropTime" ColumnName="DropTime" />
+                <ScalarProperty Name="PickupTime" ColumnName="PickupTime" />
+                <ScalarProperty Name="TaxiDate" ColumnName="TaxiDate" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="CheckId" ColumnName="CheckId" />
+                <ScalarProperty Name="CheckNo" ColumnName="CheckNo" />
+                <ScalarProperty Name="TransType" ColumnName="TransType" />
+                <ScalarProperty Name="CardEntry" ColumnName="CardEntry" />
+                <ScalarProperty Name="CustomerPONo" ColumnName="CustomerPONo" />
+                <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+                <ScalarProperty Name="ShipTo" ColumnName="ShipTo" />
+                <ScalarProperty Name="BillTo" ColumnName="BillTo" />
+                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+                <ScalarProperty Name="Host" ColumnName="Host" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="PharmacyNo" ColumnName="PharmacyNo" />
+                <ScalarProperty Name="StoreNo" ColumnName="StoreNo" />
+                <ScalarProperty Name="CVM" ColumnName="CVM" />
+                <ScalarProperty Name="Signature" ColumnName="Signature" />
+                <ScalarProperty Name="AID" ColumnName="AID" />
+                <ScalarProperty Name="HelpedBy" ColumnName="HelpedBy" />
+                <ScalarProperty Name="STRNo" ColumnName="STRNo" />
+                <ScalarProperty Name="CSHRNo" ColumnName="CSHRNo" />
+                <ScalarProperty Name="TRNNo" ColumnName="TRNNo" />
+                <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="VehicleNo" ColumnName="VehicleNo" />
+                <ScalarProperty Name="MachName" ColumnName="MachName" />
+                <ScalarProperty Name="ExitDate" ColumnName="ExitDate" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="PayedAt" ColumnName="PayedAt" />
+                <ScalarProperty Name="Lot_Location" ColumnName="Lot_Location" />
+                <ScalarProperty Name="SNNo" ColumnName="SNNo" />
+                <ScalarProperty Name="TicketNo" ColumnName="TicketNo" />
+                <ScalarProperty Name="SpaceNo" ColumnName="SpaceNo" />
+                <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+                <ScalarProperty Name="NetworkId" ColumnName="NetworkId" />
+                <ScalarProperty Name="EPSSequence" ColumnName="EPSSequence" />
+                <ScalarProperty Name="MRCH" ColumnName="MRCH" />
+                <ScalarProperty Name="Cashier" ColumnName="Cashier" />
+                <ScalarProperty Name="Clerk" ColumnName="Clerk" />
+                <ScalarProperty Name="Lane" ColumnName="Lane" />
+                <ScalarProperty Name="PayAmount" ColumnName="PayAmount" />
+                <ScalarProperty Name="PaymentService" ColumnName="PaymentService" />
+                <ScalarProperty Name="Validation" ColumnName="Validation" />
+                <ScalarProperty Name="REFNo" ColumnName="REFNo" />
+                <ScalarProperty Name="TCNo" ColumnName="TCNo" />
+                <ScalarProperty Name="TENo" ColumnName="TENo" />
+                <ScalarProperty Name="OPNo" ColumnName="OPNo" />
+                <ScalarProperty Name="STNo" ColumnName="STNo" />
+                <ScalarProperty Name="CINNo" ColumnName="CINNo" />
+                <ScalarProperty Name="LandlineNo" ColumnName="LandlineNo" />
+                <ScalarProperty Name="HelplineNo" ColumnName="HelplineNo" />
+                <ScalarProperty Name="StationNo" ColumnName="StationNo" />
+                <ScalarProperty Name="JenisBBM" ColumnName="JenisBBM" />
+                <ScalarProperty Name="NomarNota" ColumnName="NomarNota" />
+                <ScalarProperty Name="PompaSalans" ColumnName="PompaSalans" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="TRXId" ColumnName="TRXId" />
+                <ScalarProperty Name="TinNo" ColumnName="TinNo" />
+                <ScalarProperty Name="Density" ColumnName="Density" />
+                <ScalarProperty Name="Fuel" ColumnName="Fuel" />
+                <ScalarProperty Name="NozlNo" ColumnName="NozlNo" />
+                <ScalarProperty Name="Pump" ColumnName="Pump" />
+                <ScalarProperty Name="FPId" ColumnName="FPId" />
+                <ScalarProperty Name="AtndId" ColumnName="AtndId" />
+                <ScalarProperty Name="BillNo" ColumnName="BillNo" />
+                <ScalarProperty Name="GSTNo" ColumnName="GSTNo" />
+                <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+                <ScalarProperty Name="WebSiteName" ColumnName="WebSiteName" />
+                <ScalarProperty Name="ApprCode" ColumnName="ApprCode" />
+                <ScalarProperty Name="Auth" ColumnName="Auth" />
+                <ScalarProperty Name="Mcc" ColumnName="Mcc" />
+                <ScalarProperty Name="Trans" ColumnName="Trans" />
+                <ScalarProperty Name="BillRecieptDynamicHtml" ColumnName="BillRecieptDynamicHtml" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="RecieptNo" ColumnName="RecieptNo" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="RecieptLogo" ColumnName="RecieptLogo" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="CityState" ColumnName="CityState" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Business" ColumnName="Business" />
+                <ScalarProperty Name="RecieptDate" ColumnName="RecieptDate" />
+                <ScalarProperty Name="FontId" ColumnName="FontId" />
+                <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+                <ScalarProperty Name="CategoryRecieptId" ColumnName="CategoryRecieptId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="BillRecieptId" ColumnName="BillRecieptId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillRecieptItemInfoes">
+            <EntityTypeMapping TypeName="BillGenerationModel.BillRecieptItemInfo">
+              <MappingFragment StoreEntitySet="BillRecieptItemInfo">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+                <ScalarProperty Name="Mfrs" ColumnName="Mfrs" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ItemNo" ColumnName="ItemNo" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="BillRecieptId" ColumnName="BillRecieptId" />
+                <ScalarProperty Name="BillRecieptItemId" ColumnName="BillRecieptItemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillRecieptTaxInfoes">
+            <EntityTypeMapping TypeName="BillGenerationModel.BillRecieptTaxInfo">
+              <MappingFragment StoreEntitySet="BillRecieptTaxInfo">
+                <ScalarProperty Name="TaxInPercentage" ColumnName="TaxInPercentage" />
+                <ScalarProperty Name="TaxId" ColumnName="TaxId" />
+                <ScalarProperty Name="BillRecieptId" ColumnName="BillRecieptId" />
+                <ScalarProperty Name="BillRecieptTaxId" ColumnName="BillRecieptTaxId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubscriptionPlans">
+            <EntityTypeMapping TypeName="BillGenerationModel.SubscriptionPlan">
+              <MappingFragment StoreEntitySet="SubscriptionPlan">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="SubscriptionPlanDesc" ColumnName="SubscriptionPlanDesc" />
+                <ScalarProperty Name="SubscriptionPlan1" ColumnName="SubscriptionPlan" />
+                <ScalarProperty Name="SubscriptionPlanId" ColumnName="SubscriptionPlanId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubscriptionPlanPayments">
+            <EntityTypeMapping TypeName="BillGenerationModel.SubscriptionPlanPayment">
+              <MappingFragment StoreEntitySet="SubscriptionPlanPayment">
+                <ScalarProperty Name="SubscriptionToDate" ColumnName="SubscriptionToDate" />
+                <ScalarProperty Name="SubscriptionFromDate" ColumnName="SubscriptionFromDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="TrackingNumber" ColumnName="TrackingNumber" />
+                <ScalarProperty Name="ReceiptNumber" ColumnName="ReceiptNumber" />
+                <ScalarProperty Name="ReceiptUrl" ColumnName="ReceiptUrl" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="LiveMode" ColumnName="LiveMode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="ChargeId" ColumnName="ChargeId" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Cvc" ColumnName="Cvc" />
+                <ScalarProperty Name="ExpYear" ColumnName="ExpYear" />
+                <ScalarProperty Name="ExpMonth" ColumnName="ExpMonth" />
+                <ScalarProperty Name="CardName" ColumnName="CardName" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+                <ScalarProperty Name="SubscriptionPlanId" ColumnName="SubscriptionPlanId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SubscriptionPlanPayId" ColumnName="SubscriptionPlanPayId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
