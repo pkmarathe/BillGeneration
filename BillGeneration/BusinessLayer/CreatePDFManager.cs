@@ -94,7 +94,7 @@ namespace BillGeneration.BusinessLayer
                         //}
                         //if (SubscriptionPlanId == 1)
                         //{
-                        //    client.setWatermark("http://app.bills99.com/assets/images/watermarkpdfimage.png", 50, 200); // set image in backgroud in pdf
+                        //    client.setWatermark("https://app.bills99.com/assets/images/watermarkpdfimage.png", 50, 200); // set image in backgroud in pdf
                         //    client.setWatermarkRotation(-50); // Rotates the watermark by angle degrees.
                         //    client.setWatermarkInBackground(true); // true is for backgroud else foreground
                         //}

@@ -314,8 +314,8 @@ namespace BillGeneration.Controllers
                 {
                     string message;
                     message = "<table border='0' cellspacing='0' cellpadding='6' style='font-family:Arial;font-size:13px;width:100%;border-top:1px solid #ccc;border-left:1px solid #ccc;'>";
-                    message += "<tr><td colspan='5' style='background:#00bcd4 url(http://pmtool.stagingsoftware.com/assets/images/backgrounds/header-bg.png) center center; padding:10px;text-align:center;border-bottom:1px solid #ccc;border-right:1px solid #ccc;'><img src='http://app.bills99.com/assets/images/Bills99.png' style='max-width:200px;max-height:100px;' /></td></tr>";
-                    message += "<tr ><td colspan='5' style='background:#ebedf0;border-bottom:1px solid #ccc;border-right:1px solid #ccc;'>Hello " + RegistrationTableDc.Name + ",<br><br>Your Bill Generation Website Password is - " + RegistrationTableDc.Password + " <br><br>Click Here to login :- http://app.bills99.com/login </td></tr> ";
+                    message += "<tr><td colspan='5' style='background:#00bcd4 url(http://pmtool.stagingsoftware.com/assets/images/backgrounds/header-bg.png) center center; padding:10px;text-align:center;border-bottom:1px solid #ccc;border-right:1px solid #ccc;'><img src='https://app.bills99.com/assets/images/Bills99.png' style='max-width:200px;max-height:100px;' /></td></tr>";
+                    message += "<tr ><td colspan='5' style='background:#ebedf0;border-bottom:1px solid #ccc;border-right:1px solid #ccc;'>Hello " + RegistrationTableDc.Name + ",<br><br>Your Bill Generation Website Password is - " + RegistrationTableDc.Password + " <br><br>Click Here to login :- https://app.bills99.com/login </td></tr> ";
                     message += "</table>";
 
                     SendEmailSMS objsendMail = new SendEmailSMS();
